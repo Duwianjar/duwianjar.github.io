@@ -1,0 +1,122 @@
+body {
+    font-family: Monospace, sans-serif;
+    background-color: rgb(16, 140, 235);
+}
+
+.container {
+    user-select: none;
+    background: green;
+    color: #000000;
+    border-radius: 20px;
+    width: 100%;
+    text-align: left;
+    box-shadow: 0 20px 35px -5px rgba(0, 0, 0, 0.75);
+}
+
+h1 {
+    text-indent: 2em;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: rgb(0, 208, 255);
+    text-align: center;
+}
+
+body {
+    background-color: #dddddd;
+}
+
+#content {
+    margin: auto;
+    width: 960px;
+}
+
+.samping1 {
+    border-left: 1px solid white;
+    height: 4em;
+    width: 0px;
+    float: right;
+    margin-right: 5em;
+}
+
+.samping2 {
+    border-left: 1px solid white;
+    height: 4em;
+    width: 0px;
+    float: right;
+    margin-right: 1.8em;
+}
+
+.gambar2 a {
+    color: white;
+    float: right;
+    margin-top: 1.3em;
+    padding-right: 1.5em;
+    text-decoration: none;
+}
+
+.gambar2 img {
+    padding-right: 1em;
+    width: 1em;
+}
+
+.samping3 {
+    border-left: 1px solid white;
+    height: 4em;
+    width: 0px;
+    float: right;
+    margin-right: 1.8em;
+}
+
+p {
+    text-align: center;
+}
+
+pre {
+    padding-left: 145px;
+}
+
+div {
+    border-radius: 20px;
+    width: 100%;
+    box-shadow: 0 20px 35px -5px rgba(0, 0, 0, 0.75);
+}
+
+#main-content {
+    height: 40%;
+}
+
+#main-content2 {
+    padding-top: 20px;
+    height: 80%;
+}
+
+#content {
+    width: 60%;
+    min-height: auto;
+}
+
+#news {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    float: left;
+    background-color: white;
+}
+
+#hijau {
+    color: rgb(0, 255, 60);
+    padding-bottom: 5px;
+}
+
+#setelah-proses {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: green;
+}
+
+#lihat {
+    background-color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}

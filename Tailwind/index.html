@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Taiwind CSS</title>
+    <link href="dist/output.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Header Start -->
+    <header class="bg-transparent absolute top-0 left-0 w-full flex item-center z-10">
+        <div class="container">
+            <div class="flex items-center justify-between relative">
+                <div class="px-4 flex md:-mt-5 lg:-mt-0 mr-10">
+                    <img src="dist/img/logo/tailwind.svg" alt="" />
+                    <a href="#home" class="font-bold items-center text-lg text-sky-500 block py-6">DAAW</a>
+                </div>
+                <div class="flex items-center px-4">
+                    <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 md:hidden lg:hidden">
+              <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
+              <span class="hamburger-line transition duration-300 ease-in-out"></span>
+              <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
+            </button>
+                    <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg raunded-lg max-w-[250px] w-full right-4 top-full md:block lg:block md:static lg:static md:bg-transparent lg:bg-transparent md:max-w-full lg:max-w-full md:shadow-none lg:shadow-none md:rounded-none lg:rounded-none">
+                        <ul class="block md:flex lg:flex">
+                            <li class="group">
+                                <a href="#home" class="text-base text-dark py-2 mx-8 flex group-hover:text-sky-500">Beranda</a>
+                            </li>
+                            <li class="group">
+                                <a href="#about" class="text-base text-dark py-2 mx-8 flex group-hover:text-sky-500">Tentang Saya</a>
+                            </li>
+                            <li class="group">
+                                <a href="#portfolio" class="text-base text-dark py-2 mx-8 flex group-hover:text-sky-500">Portfolio</a>
+                            </li>
+                            <li class="group">
+                                <a href="#code" class="text-base text-dark py-2 mx-8 flex group-hover:text-sky-500">Code</a>
+                            </li>
+                            <li class="group">
+                                <a href="#champion" class="text-base text-dark py-2 mx-8 flex group-hover:text-sky-500">Pencapaian</a>
+                            </li>
+                            <li class="group">
+                                <a href="#experience" class="text-base text-dark py-2 mx-8 flex group-hover:text-sky-500">Pengalaman</a>
+                            </li>
+                            <li class="group">
+                                <a href="#contact" class="text-base text-dark py-2 mx-8 flex group-hover:text-sky-500">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header end -->
+
+    <!-- Hero Section Start -->
+    <section id="home" class="pt-36">
+        <div class="coutainer">
+            <div class="flex flex-wrap">
+                <div class="lg:w-1/6"></div>
+                <div class="w-full self-center px-4 lg:px-0 md:w-1/2 lg:w-1/3">
+                    <h1 class="text-base font-semibold text-primary md:text-xl lg:text-2xl">Halo Semua 👋, Saya <span class="block font-bold text-lime-700 text-4xl mt-1 lg:text-5xl">Duwi Anjar Ariw</span></h1>
+                    <h2 class="font-medium text-primary text-lg mb-5 lg:text-2xl">Mahasiswa | <span class="text-dark">Freelance</span></h2>
+                    <p class="font-medium text-primary mb-10 leading-relaxed">Bukan programer, cuma seorang manusia biasa yang tertarik dengan dunia perkodingan. <span class="text-dark font-bold">belajar yuk!</span></p>
+                    <a href="https://wa.me/qr/UQGA2UZVEVUQJ1" class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:bg-amber-600 transition duration-300 ease-in-out">Hubungi Saya</a>
+                </div>
+                <div class="w-full self-end pt-36 px-4 md:pt-0 md:w-1/2 lg:w-1/3">
+                    <div class="relative -mt-20 lg:-mt-20 lg:right-0">
+                        <img src="dist/img/anjar.png" alt="Duwi Anjar" class="max-w-full mx-auto" />
+                        <span class="absolute -bottom-20 -z-10 left-1/2 -translate-x-1/2 md:scale-125">
+                <svg width="390" height="330" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill="#6d28d9"
+                    d="M20.8,-11.4C33.1,9.3,53.4,25.9,51.2,32.7C49.1,39.5,24.6,36.6,7.5,32.2C-9.6,27.9,-19.2,22.3,-33.5,8.5C-47.8,-5.4,-66.7,-27.4,-61.9,-43.8C-57.1,-60.2,-28.6,-70.9,-12.1,-63.9C4.3,-56.9,8.5,-32.1,20.8,-11.4Z"
+                    transform="translate(90 100) scale(1.1)"
+                  />
+                </svg>
+              </span>
+                        <span class="absolute -bottom-20 -z-10 left-1/2 -translate-x-1/2 md:scale-125">
+                <svg width="350" height="330" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill="#FF0068"
+                    d="M49,-28.9C60.5,-8.2,65,15.9,55.6,27.9C46.3,39.8,23.1,39.6,-2.8,41.2C-28.7,42.8,-57.3,46.2,-63.4,36.1C-69.5,26.1,-53,2.5,-38.7,-19.8C-24.3,-42.1,-12.2,-63.1,3.3,-65C18.7,-66.9,37.4,-49.7,49,-28.9Z"
+                    transform="translate(115 100) scale(1.1)"
+                  />
+                </svg>
+              </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- About Section Start -->
+    <section id="about" class="pt-36 pb-32">
+        <div class="container">
+            <div class="flex flex-wrap">
+                <div class="lg:w-1/6"></div>
+                <div class="w-full mb-10 lg:-ml-10 lg:w-1/3">
+                    <h4 class="font-bold uppercase text-primary text-lg mb-3">Tentang Saya</h4>
+                    <h2 class="font-bold text-dark text-3xl max-w-md">Mahasiswa Universitas Ahmad Dahlan</h2>
+                    <p class="font-medium text-base text-slate-600 max-w-xl">
+                        Mahasiswa semester 2 yang sedang menempuh program studi informatika di Universitas Ahmad Dahlan. Belum memiliki pengalaman pekerjaan di bidang informatika, jika anda sekalian mempunyai lowongan pekerjaan atau project yang sekiranya bisa saya selesaikan
+                        bisa menghubungi saya di
+                        <a href="https://wa.me/qr/UQGA2UZVEVUQJ1" class="text-base text-primary hover:text-abang">kontak</a> yang sudah tersedia , saya akan sangat berterimakasih atas informasi tersebut.
+                    </p>
+                </div>
+                <div class="w-full lg:pl-20 lg:w-1/3">
+                    <h3 class="font-semibold text-dark text-2xl mb-4 lg:font-bold">Mari Berteman</h3>
+                    <p class="font-medium text-base text-slate-600 mb-6">Ada pepatah " Tak kenal maka tak sayang " , jadi untuk kenal lebih dekat dengan saya bisa klik link sosial media milik saya yang sudah tertera di bawah ini.</p>
+                    <div class="flex items-center">
+                        <!-- youtube -->
+                        <a href="https://youtube.com/channel/UCVMSwf0CqlBCOMLbEZsEomg" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-white hover:border-amber-600 hover:bg-primary text-red-700 hover:text-white">
+                            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <title>YouTube</title>
+                  <path
+                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                  />
+                </svg>
+                        </a>
+
+                        <!-- instagram -->
+                        <a href="https://instagram.com/duwiaaw" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-white hover:border-amber-600 hover:bg-primary text-pink-600 hover:text-white">
+                            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <title>Instagram</title>
+                  <path
+                    d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"
+                  />
+                </svg>
+                        </a>
+
+                        <!-- Twiter -->
+                        <a href="https://twitter.com/duwi_Anjar_Ariw?t=z2D6phhfs6pNvnFWihXGLA&s=09" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-white hover:border-amber-600 hover:bg-primary text-blue-700 hover:text-white">
+                            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <title>Twitter</title>
+                  <path
+                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                  />
+                </svg>
+                        </a>
+
+                        <!-- Facebook -->
+                        <a href="https://facebook.com/anjar.gawol" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-white hover:border-amber-600 hover:bg-primary text-blue-700 hover:text-white">
+                            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <title>Facebook</title>
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  />
+                </svg>
+                        </a>
+
+                        <!-- Tiktok -->
+                        <a href="https://vt.tiktok.com/ZSdKhUR1t/" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-white hover:border-amber-600 hover:bg-primary text-dark hover:text-white">
+                            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <title>TikTok</title>
+                  <path
+                    d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"
+                  />
+                </svg>
+                        </a>
+
+                        <!-- LIne -->
+                        <a href="https://line.me/ti/p/TBZIB_81fJ" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-white hover:border-amber-600 hover:bg-primary text-green-600 hover:text-white">
+                            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <title>LINE</title>
+                  <path
+                    d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"
+                  />
+                </svg>
+                        </a>
+
+                        <!-- Telegram -->
+                        <a href="https://t.me/duwiaaw" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-white hover:border-amber-600 hover:bg-primary text-blue-600 hover:text-white">
+                            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <title>Telegram</title>
+                  <path
+                    d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"
+                  />
+                </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section End -->
+
+    <!-- Portfolio Section Start -->
+    <section id="portfolio" class="pt-36 pb-16 bg-slate-300">
+        <div class="container">
+            <div class="w-full px-4">
+                <div class="max-w xl mx-auto text-center mb-16">
+                    <h4 class="font-semibold text-lg text-primary mb-2">Portfolio</h4>
+                    <h2 class="font-bold text-dark text-3xl mb-4">Project Terbaru</h2>
+                    <p class="font-medium text-md text-slate-700">Berikut adalah beberapa website yang saya buat dalam kurun waktu 4 bulan terakhir.</p>
+                </div>
+            </div>
+            <div class="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
+                <div class="mb-12 p-4 md:w-1/2">
+                    <div class="rounded-md shadow md overflow-hidden">
+                        <img src="dist/img/portfolio/1.png" alt="lading page" width="w-full" />
+                    </div>
+                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Website Portfolio</h3>
+                    <p class="font-medium text-base text-slate-600">
+                        Website ini saya buat dengan text html , css , java script serta menggunakan framework css yaitu bootstrap. Website ini merupakan website portfolio pertama yang saya buat untuk melihatnya bisa cek
+                        <a href="https://duwianjar.github.io" class="text-blue-600">disini</a>
+                    </p>
+                </div>
+                <div class="mb-12 p-4 md:w-1/2">
+                    <div class="rounded-md shadow md overflow-hidden">
+                        <img src="dist/img/portfolio/2.png" alt="lading page" width="w-full" />
+                    </div>
+                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Website Portfolio</h3>
+                    <p class="font-medium text-base text-slate-600">
+                        Website ini saya buat dengan text html , css dan java script . Website ini merupakan website portfolio kedua yang saya buat untuk melihatnya bisa cek
+                        <a href="https://duwianjar.github.io/index2.html" class="text-blue-600">disini</a>
+                    </p>
+                </div>
+                <div class="mb-12 p-4 md:w-1/2">
+                    <div class="rounded-md shadow md overflow-hidden">
+                        <img src="dist/img/portfolio/lombapweb.jpg" alt="lading page" width="w-full" />
+                    </div>
+                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Website Sekolah</h3>
+                    <p class="font-medium text-base text-slate-600">
+                        Website ini saya buat bersama 2 teman kelompok saya untuk mengikuti lomba pembuatan website yang di selengaran oleh HMIF UAD, website ini terdiri dari text html , style css , java script, php dan beberapa framwork , untuk website yang saya hosting belum
+                        selesai sepenuhnya karena saya belum menghostingkan databasenya tapi jika ingin melihat bisa cek
+                        <a href="https://duwianjarariwibowo.000webhostapp.com" class="text-blue-600">disini</a>
+                    </p>
+                </div>
+                <div class="mb-12 p-4 md:w-1/2">
+                    <div class="rounded-md shadow md overflow-hidden">
+                        <img src="dist/img/portfolio/3.png" alt="lading page" width="w-full" />
+                    </div>
+                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Website Portfolio</h3>
+                    <p class="font-medium text-base text-slate-600">Website ini adalah website yang terbuka sekarang dan website ini merupakan website portfolio saya yang ketiga , dan saya buat dengan framefork css Tailwind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio Section End -->
+
+    <!-- Code Section Start -->
+    <section id="code" class="pb-36 pt-32 bg-slate-600">
+        <div class="container">
+            <div class="w-full px-4">
+                <div class="xl mx-auto text-center mb-16">
+                    <h4 class="font-semibold md:font-bold md:text-3xl text-lg text-lime-500 mb-2">CODE ;</h4>
+                    <h2 class="font-bold text-white text-3xl mb-4 sm:text-4xl lg:text-5xl">Yang Sudah di pelajari</h2>
+                    <p class="font-medium text-md text-cyan-400 md:text-lg">
+                        Berikut ini adalah sedikit bahasa pemrograman dan bahasa markup yang sudah saya pelajari di kuliah serta saya pelajari sendiri secara otodidak, bila di klik pada logo-logo di bawah ini nanti akan mengarah ke penjelasan masih-masing bahasa di beberapa
+                        blog yang saya pilih.
+                    </p>
+                </div>
+            </div>
+            <div class="w-full px-4">
+                <div class="flex flex-wrap items-center justify-center">
+                    <a href="https://www.dicoding.com/blog/belajar-pemrograman-c-pemula/" class="max-w-[100px] mx-4 py-4 grayscale opacity-60 transition duration-300 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                        <img src="dist/img/logo/c.svg" />
+                    </a>
+                    <a href="https://id.m.wikipedia.org/wiki/C%2B%2B" class="max-w-[100px] mx-4 py-4 grayscale opacity-60 transition duration-300 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                        <img src="dist/img/logo/c++.svg" alt="c++" />
+                    </a>
+                    <a href="https://www.niagahoster.co.id/blog/java-adalah/" class="max-w-[100px] mx-4 py-4 grayscale opacity-60 transition duration-300 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                        <img src="dist/img/logo/java.svg" alt="c++" />
+                    </a>
+                    <a href="https://brainly.co.id/tugas/9656513" class="max-w-[100px] mx-4 py-4 grayscale opacity-60 transition duration-300 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                        <img src="dist/img/logo/html.svg" alt="c++" />
+                    </a>
+                    <a href="https://id.m.wikipedia.org/wiki/Cascading_Style_Sheets" class="max-w-[100px] mx-4 py-4 grayscale opacity-60 transition duration-300 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                        <img src="dist/img/logo/css.svg" alt="c++" />
+                    </a>
+                    <a href="https://id.m.wikipedia.org/wiki/JavaScript" class="max-w-[100px] mx-4 py-4 grayscale opacity-60 transition duration-300 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                        <img src="dist/img/logo/js.svg" alt="c++" />
+                    </a>
+                    <a href="https://id.m.wikipedia.org/wiki/PHP" class="max-w-[100px] mx-4 py-4 grayscale opacity-60 transition duration-300 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                        <img src="dist/img/logo/php.svg" alt="c++" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Code Section End -->
+
+    <!-- Champion Section Start -->
+    <section id="champion" class="pt-36 pb-32 bg-slate-100">
+        <div class="container">
+            <div class="w-full px-4">
+                <div class="max-w xl mx-auto text-center mb-16">
+                    <h4 class="font-semibold text-lg text-primary mb-2 md:text-2xl">Champion</h4>
+                    <h2 class="font-bold text-dark text-3xl mb-4">Pencapaian terkini</h2>
+                    <p class="font-medium text-md text-slate-700">Disini nantinya saya taruh beberapa Sertifikat prestasi yang saya dapatkan di bidang informatika .</p>
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center">
+                <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+                        <img src="dist/img/sertif/juarapweb.png" alt="Programing" class="w-full" />
+                        <div class="py-8 px-6">
+                            <h3>
+                                <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-sky-500 truncate">Lomba PWEB Parmatika 2022</a>
+                            </h3>
+                            <p class="font-medium text-base text-slate-600 mb-6">
+                                Diatas merupakan sertifikat hasil perlombaan parmatika yang saya ikuti bersama 2 teman saya dan nama kelompok kami adalah Akatsuki , bisa di cek di
+                                <a href="http://www.instagram.com/p/CgOnelqv1h3/?igshid=MDJmNzVkMjY=" class="text-blue-600">postingan instagram parmatika</a>
+                            </p>
+                            <a href="http://www.instagram.com/p/CgOnelqv1h3/?igshid=MDJmNzVkMjY=" class="dont-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80">CEK DISINI</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+                        <img src="dist/img/sertif/progres.png" alt="Programing" class="w-full" />
+                        <div class="py-8 px-6">
+                            <h3>
+                                <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-sky-500 truncate">Progres</a>
+                            </h3>
+                            <p class="font-medium text-base text-slate-600 mb-6">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis, nulla.</p>
+                            <a href="#" class="dont-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80">Baca selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+                        <img src="dist/img/sertif/progres.png" alt="Programing" class="w-full" />
+                        <div class="py-8 px-6">
+                            <h3>
+                                <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-sky-500 truncate">Progres</a>
+                            </h3>
+                            <p class="font-medium text-base text-slate-600 mb-6">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis, nulla.</p>
+                            <a href="#" class="dont-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80">Baca selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Champion Section end -->
+
+    <!-- experience Section Start -->
+    <section id="experience" class="pt-36 pb-32 bg-slate-600">
+        <div class="container">
+            <div class="w-full px-4">
+                <div class="max-w xl mx-auto text-center mb-16">
+                    <h4 class="font-semibold md:font-bold md:text-3xl text-lg text-lime-500 mb-2">Experience</h4>
+                    <h2 class="font-bold text-white text-3xl mb-4">Pengalaman kerja</h2>
+                    <p class="font-medium text-md text-cyan-400 md:text-lg">Berikut ini adalah beberapa pekerjaan dan posisi yang sudah pernah saya jalani.</p>
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center">
+                <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+                        <img src="dist/img/pengalaman/app.png" alt="Programing" class="w-full" />
+                        <div class="py-8 px-6">
+                            <h3 class="block mb-3 font-semibold text-xl"><a href="http://id.m.wikipedia.org/wiki/Asia-Pulp_%26_Paper" class="text-blue-600">APP Sinarmas Grup</a></h3>
+                            <p class="font-medium text-base text-slate-600 mb-6">( PT Indah Kiat Pulp & Paper Serang ) <br />Jul 2019 - Sep 2020</p>
+                            <h3 class="block mb-3 font-semibold text-xl"><a href="http://youtu.be/v84tDFgAxX0" class="text-blue-600">Flexo Machine Operator</a></h3>
+                            <p class="font-medium text-base text-slate-600 mb-6">
+                                * Mengoprasikan mesin flexo graphic inline untuk mencetak kardus.<br />* Mencapi target yang di berikan bersama teman satu mesin.<br />* Menjaga kualitas produk yang di produksi. <br />*Mengurangi downtime pada saat jam
+                                kerja.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+                        <img src="dist/img/pengalaman/alfalah.jpg" alt="Programing" class="w-full" />
+                        <div class="py-8 px-6">
+                            <h3 class="block mb-3 font-semibold text-xl"><a href="http://g.co/kgs/P7WQn9" class="text-blue-600">Percetakan Al Falah</a></h3>
+                            <p class="font-medium text-base text-slate-600 mb-6">( Al Fallah Grafika ) <br />Des 2020 - Jan 2021</p>
+                            <h3 class="block mb-3 font-semibold text-xl"><a href="http://youtu.be/dT5jENwgeLA" class="text-blue-600">Second Operator</a></h3>
+                            <p class="font-medium text-base text-slate-600 mb-6">
+                                * Membantu operator dalam produksi/ mencetak.<br />* Membantu operator dalam mengejar target yang di berikan oleh pimpinan.<br />* Menjaga kebersihan mesin produksi. <br />* Menyiapkan bahan sebelum produksi.<br />* Melakukan
+                                finishing pada hasil produksi.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+                        <img src="dist/img/pengalaman/pandawa.jpg" alt="Programing" class="w-full" />
+                        <div class="py-8 px-6">
+                            <h3 class="block mb-3 font-semibold text-xl"><a href="http://instagram.com/martabakpandawa_pusat?igshid=YmMyMTA2M2Y=" class="text-blue-600">Martabak Manis Pandawa</a></h3>
+                            <p class="font-medium text-base text-slate-600 mb-6">( CV. Gelora Sakti Mulia )<br />Feb 2021 - Jul 2021</p>
+                            <h3 class="block mb-3 font-semibold text-xl"><a href="http://instagram.com/martabakpandawa_pusat?igshid=YmMyMTA2M2Y=" class="text-blue-600">Outlet Keeper</a></h3>
+                            <p class="font-medium text-base text-slate-600 mb-6">
+                                * Menyiapkan Bahan serta peralatan sebelum outlet buka.<br />* Melayani dan memasak martabak untuk pembeli.<br />* Bertanggung jawab atas kebersihan outlet. <br />* Bertanggung jawab pada administrasi outlet.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- experience Section end -->
+
+    <!-- Contact Section Start -->
+    <section id="contact" class="pt-36 pb-32">
+        <div class="container">
+            <div class="w-full px-4">
+                <div class="max-w xl mx-auto text-center mb-16">
+                    <h4 class="font-semibold text-lg text-primary mb-2 md:text-2xl">Contact</h4>
+                    <h2 class="font-bold text-dark text-3xl mb-4">Hubungi Kami</h2>
+                    <p class="font-medium text-md text-slate-700">Kirim pesan untuk menghubungi kami</p>
+                </div>
+            </div>
+            <form>
+                <div class="w-full lg:w-2/3 lg:mx-auto">
+                    <div class="w-full px-4 mb-8">
+                        <label for="name" class="text-base font-bold text-primary">Nama</label>
+                        <input type="text" id="name" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
+                    </div>
+                    <div class="w-full px-4 mb-8">
+                        <label for="email" class="text-base font-bold text-primary">Email</label>
+                        <input type="email" id="email" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
+                    </div>
+                    <div class="w-full px-4 mb-8">
+                        <label for="massage" class="text-base font-bold text-primary">Pesan</label>
+                        <textarea type="text" id="massage" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary h-32"> </textarea>
+                    </div>
+                    <div class="w-full px-4">
+                        <button class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full w-full gover:opacity-80 hover:shadow-lg transition duration-500">Kirim</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Footer Start -->
+    <footer class="bg-dark pt-24 pb-12">
+        <div class="container">
+            <div class="flex flex-wrap">
+                <div class="w-full px-4 mb-12 text-slate-300 font-medium md:w-1/3">
+                    <h2 class="font-bold text-4xl text-white mb-4">DAAW</h2>
+                    <h3 class="font-bold text-2xl mb-2">Hubungi Kami</h3>
+                    <p>duwianjarariwibowo@gmail.com</p>
+                    <p>Banaran Kidul, Banguncipto, Kec. Sentolo, Kab. Kulon Progo, DIY 55664</p>
+                </div>
+            </div>
+            <div class="w-full pt-10 border-t border-slate-700">
+                <div class="flex items-center justify-center mb-5">
+                    <!-- youtube -->
+                    <a href="https://youtube.com/channel/UCVMSwf0CqlBCOMLbEZsEomg" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-white hover:border-amber-600 hover:bg-primary text-red-700 hover:text-white">
+                        <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>YouTube</title>
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                />
+              </svg>
+                    </a>
+
+                    <!-- instagram -->
+                    <a href="https://instagram.com/duwiaaw" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-white hover:border-amber-600 hover:bg-primary text-pink-600 hover:text-white">
+                        <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>Instagram</title>
+                <path
+                  d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"
+                />
+              </svg>
+                    </a>
+
+                    <!-- Twiter -->
+                    <a href="https://twitter.com/duwi_Anjar_Ariw?t=z2D6phhfs6pNvnFWihXGLA&s=09" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-white hover:border-amber-600 hover:bg-primary text-blue-700 hover:text-white">
+                        <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>Twitter</title>
+                <path
+                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                />
+              </svg>
+                    </a>
+
+                    <!-- Facebook -->
+                    <a href="https://facebook.com/anjar.gawol" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-white hover:border-amber-600 hover:bg-primary text-blue-700 hover:text-white">
+                        <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>Facebook</title>
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
+                    </a>
+
+                    <!-- Tiktok -->
+                    <a href="https://vt.tiktok.com/ZSdKhUR1t/" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-white hover:border-amber-600 hover:bg-primary text-white hover:text-white">
+                        <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>TikTok</title>
+                <path
+                  d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"
+                />
+              </svg>
+                    </a>
+
+                    <!-- LIne -->
+                    <a href="https://line.me/ti/p/TBZIB_81fJ" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-white hover:border-amber-600 hover:bg-primary text-green-600 hover:text-white">
+                        <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>LINE</title>
+                <path
+                  d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"
+                />
+              </svg>
+                    </a>
+
+                    <!-- Telegram -->
+                    <a href="https://t.me/duwiaaw" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-white hover:border-amber-600 hover:bg-primary text-blue-600 hover:text-white">
+                        <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>Telegram</title>
+                <path
+                  d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"
+                />
+              </svg>
+                    </a>
+                </div>
+                <p class="font-medium text-sm text-slate-500 text-center">Designed by <span class="font-bold text-primary">Duwi Anjar Ariwibowo</span>, with use <span class="font-bold text-sky-500">Tailwind CSS</span></p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+    <script src="dist/js/script.js"></script>
+</body>
+
+</html>

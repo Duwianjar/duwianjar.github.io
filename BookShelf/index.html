@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daaw | Bookshelf Apps</title>
+    <link rel="shortcut icon" href="./assets/icon/bookshelf.png" type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+          <button class="btn" type="button" id="btn-brand">
+            <img src="./assets/icon/bookshelf.png" alt="logo">
+            My Books
+          </button>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <div class="add" id="add">
+            <button class="btn" type="button" id="btn-add-book">
+              <img src="./assets/icon/plus.png" alt="plush">
+              Add Book
+            </button>
+            </div>
+          </li>
+          <li>
+            <button class="btn" type="button" id="btn-trash">
+              <img src="./assets/icon/trash.png" alt="trash">
+              Trash
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+          <ul class="mobile-menu">
+            <li>
+              <button class="btn" type="button" id="btn-add-book-mobile">
+                <img src="./assets/icon/plus.png" alt="plush">
+                Add Book
+              </button>
+            </li>
+            <li>
+              <button class="btn" type="button" id="btn-trash-mobile">
+                <img src="./assets/icon/trash.png" alt="trash"> 
+                Trash
+              </button>
+            </li>
+          </ul>
+      </div>   
+    </header>
+    <main>
+      <div class="container">
+        <div id="form-add-book" class="hide">
+          <form action="#" id="form-add-new-book">
+            <div class="option">
+              <button class="cancel" id="btn-cancel" type="button">
+                <img src="./assets/icon/cancel.png" alt="cancel image">
+              </button>
+              </div>
+            <h3>Add New Book</h3> 
+            <input type="hidden" id="book-id" />
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input
+                class="input-text"
+                required
+                type="text"
+                id="input-book-title"
+              />
+            </div>
+            <div class="form-group">
+              <label for="author">Author</label>
+              <input
+                class="input-text"
+                required
+                type="text"
+                id="input-book-author"
+              />
+            </div>
+            <div class="form-group">
+              <label for="year">Year</label>
+              <input
+                class="input-text"
+                required
+                type="number"
+                id="input-book-year"
+              />
+            </div>
+            <div class="form-group">
+              <label for="isCompleted">Is Reading Completed</label>
+              <input
+                class="custom"
+                type="checkbox"
+                id="input-book-isComplete"
+              />
+            </div>
+            <div class="option">
+              <button class="save" type="submit"><img src="./assets/icon/save.png" alt="save"> Save</button>
+            </div>
+          </form>
+        </div>
+        <div class="src" id="src">
+          <div class="src-tool">
+            <button class="btn-src" type="button" id="btn-src">
+              <img src="./assets/icon/search.png" alt="search" />
+            </button>
+          </div>
+        </div>
+        <div class="display__none" id="display-src">
+          <div class="search">
+            <input class="search__text" id="search-query" type="text" placeholder="Search" />
+            <button class="btn-search" type="button" id="btn-search">
+              <img src="./assets/icon/search.png" alt="search" />
+            </button>
+          </div>
+        </div>
+        <div class="booklist" id="booklist">
+        <div id="book-list" class="book__list">
+          <div id="is-not-completed" class="not__completed">
+            <h4>
+              <img src="./assets/icon/loading.png" alt="time-left" />
+              Not Finished
+            </h4>
+            <div class="card card-404">
+              <img
+              src="./assets/icon/folder.png"
+                alt="book-placeholder"
+              />
+              <span>There is no book data, please add a new book</span>
+            </div>
+          </div>
+          <div id="is-completed" class="flex-item ml-1">
+            <h4>
+              <img src="./assets/icon/check.png" alt="checklist" />
+              Finished
+            </h4>
+            <div class="card card-404">
+              <img
+                src="./assets/icon/folder.png"
+                alt="book-placeholder"
+              />
+              <span>There is no book data, please add a new book</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="del hide" id="del">
+        <div class="trash__data">
+          <div class="center">
+            <img src="./assets/icon/paper.png" alt="trash paper">
+            Trash Data
+          </div>
+          
+        </div>
+        <div id="Deleted-list" class="deleted__list">
+          <div id="is-not-completed-trash" class="not__completed-trash">
+            <h4>
+              <img src="./assets/icon/loading.png" alt="time-left" />
+              Not Finished
+            </h4>
+            <div class="card-trash card-404-trash">
+              <img
+              src="./assets/icon/empty.png"
+                alt="book-placeholder"
+              />
+              <span>No Trash Data</span>
+            </div>
+          </div>
+          <div id="is-completed-trash" class="flex-item ml-1">
+            <h4>
+              <img src="./assets/icon/check.png" alt="checklist" />
+              Finished
+            </h4>
+            <div class="card-trash card-404-trash">
+              <img
+                src="./assets/icon/empty.png"
+                alt="book-placeholder"
+              />
+              <span>No Trash Data</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </main>
+    <footer></footer>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

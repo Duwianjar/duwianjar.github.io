@@ -6,57 +6,49 @@
     <title>Fetch Data dari Nominatim</title>
 </head>
 <body>
-    <h1>Fetch Data dari Nominatim OpenStreetMaps</h1>
+    <h1>Fetch Data dari Nominatim OpenStreetMap</h1>
     <p>Data akan ditampilkan di konsol.</p>
 
     <script>
-        // Fungsi untuk mengambil data dari Nominatim berdasarkan latitud dan longitud
-        async function fetchData(lat, lon) {
-            const url = `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`;
-            const headers = {
-                "User -Agent": "MyUser Agent/1.0"
-            };
-            const options = {
-                method: "GET",
-                headers: headers
-            };
+        // URL untuk mengambil data
+        const url = "https://nominatim.openstreetmap.org/reverse?lat=-7.770637079932272&lon=110.39319148685021&format=json";
 
+        // Buat header untuk request
+        const headers = {
+            "User-Agent": "MyUserAgent/1.0"
+        };
+
+        // Buat objek untuk fetch data
+        const options = {
+            method: "GET",
+            headers: headers
+        };
+
+        // Fungsi untuk mengambil data
+        async function fetchData() {
             try {
+                // Fetch data dari URL
                 const response = await fetch(url, options);
                 
+                // Cek apakah response berhasil
                 if (response.ok) {
+                    // Parse response sebagai JSON
                     const data = await response.json();
+                    
+                    // Tampilkan data dalam format JSON di konsol
                     console.log(data);
                 } else {
+                    // Jika response gagal, tampilkan error
                     throw new Error(`Gagal mengambil data. Error: ${response.status} ${response.statusText}`);
                 }
             } catch (error) {
+                // Jika terjadi error, tampilkan error
                 console.error(error.message);
             }
         }
 
-        // Fungsi untuk mendapatkan lokasi pengguna
-        function getUser Location() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
-                    (position) => {
-                        const lat = position.coords.latitude;
-                        const lon = position.coords.longitude;
-                        console.log(`Lat: ${lat}, Lon: ${lon}`);
-                        // Panggil fungsi fetchData dengan lat dan lon
-                        fetchData(lat, lon);
-                    },
-                    (error) => {
-                        console.error("Error getting location: ", error.message);
-                    }
-                );
-            } else {
-                console.error("Geolocation is not supported by this browser.");
-            }
-        }
-
-        // Panggil fungsi untuk mendapatkan lokasi pengguna
-        getUser Location();
+        // Panggil fungsi untuk mengambil data
+        fetchData();
     </script>
 </body>
 </html>

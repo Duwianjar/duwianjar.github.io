@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informasi IP</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h2 {
+      color: #333;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Data API</h2>
+  <button id="getData">Ambil Data</button>
+  <pre id="data-output"></pre>
+
+  <script>
+    // Fungsi untuk menentukan nama browser
+    function getBrowserName() {
+      const userAgent = navigator.userAgent;
+      if (userAgent.includes("Chrome")) {
+        return "Google Chrome";
+      } else if (userAgent.includes("Firefox")) {
+        return "Mozilla Firefox";
+      } else if (userAgent.includes("Safari")) {
+        return "Safari";
+      } else if (userAgent.includes("Edge")) {
+        return "Microsoft Edge";
+      } else {
+        return "Browser tidak terdeteksi";
+      }
+    }
+
+    // Fungsi untuk mengambil data dari API dan menggabungkannya
+    function getData() {
+      const url = 'http://ip-api.com/json/';
+      fetch(url)
+        .then(response => response.json())
+        .then(apiData => {
+          // Data yang akan ditampilkan
+          const data = {
+            ip: apiData.query || 'Data belum diambil',
+            city: apiData.city || 'Data belum diambil',
+            country: apiData.country || 'Data belum diambil',
+            isp: apiData.isp || 'Data belum diambil',
+            lat: apiData.lat || null,
+            lon: apiData.lon || null,
+            browser: getBrowserName(),
+            platform: navigator.platform || null,
+          };
+
+          // Tampilkan data dalam format JSON
+          document.getElementById('data-output').textContent = JSON.stringify(data, null, 2);
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    // Event listener untuk tombol
+    document.getElementById('getData').addEventListener('click', getData);
+  </script>
+</body>
+</html>

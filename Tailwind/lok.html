@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Data dari Nominatim</title>
+</head>
+<body>
+    <h1>Fetch Data dari Nominatim OpenStreetMap</h1>
+    <p>Data akan ditampilkan di konsol.</p>
+
+    <script>
+        // URL untuk mengambil data
+        const url = "https://nominatim.openstreetmap.org/reverse?lat=-7.770637079932272&lon=110.39319148685021&format=json";
+
+        // Buat header untuk request
+        const headers = {
+            "User -Agent": "MyUser  Agent/1.0"
+        };
+
+        // Buat objek untuk fetch data
+        const options = {
+            method: "GET",
+            headers: headers
+        };
+
+        // Fungsi untuk mengambil data
+        async function fetchData() {
+            try {
+                // Fetch data dari URL
+                const response = await fetch(url, options);
+                
+                // Cek apakah response berhasil
+                if (response.ok) {
+                    // Parse response sebagai JSON
+                    const data = await response.json();
+                    
+                    // Tampilkan data dalam format JSON di konsol
+                    console.log(data);
+                } else {
+                    // Jika response gagal, tampilkan error
+                    throw new Error(`Gagal mengambil data. Error: ${response.status} ${response.statusText}`);
+                }
+            } catch (error) {
+                // Jika terjadi error, tampilkan error
+                console.error(error.message);
+            }
+        }
+
+        // Panggil fungsi untuk mengambil data
+        fetchData();
+    </script>
+</body>
+</html>

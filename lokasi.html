@@ -1,72 +1,54 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Informasi IP</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    h2 {
-      color: #333;
-    }
-    pre {
-      background-color: #f4f4f4;
-      padding: 10px;
-      border-radius: 5px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Data dari Nominatim</title>
 </head>
 <body>
-  <h2>Data API</h2>
-  <button id="getData">Ambil Data</button>
-  <pre id="data-output"></pre>
+    <h1>Fetch Data dari Nominatim OpenStreetMap</h1>
+    <p>Data akan ditampilkan di konsol.</p>
 
-  <script>
-    // Fungsi untuk menentukan nama browser
-    function getBrowserName() {
-      const userAgent = navigator.userAgent;
-      if (userAgent.includes("Chrome")) {
-        return "Google Chrome";
-      } else if (userAgent.includes("Firefox")) {
-        return "Mozilla Firefox";
-      } else if (userAgent.includes("Safari")) {
-        return "Safari";
-      } else if (userAgent.includes("Edge")) {
-        return "Microsoft Edge";
-      } else {
-        return "Browser tidak terdeteksi";
-      }
-    }
+    <script>
+        // URL untuk mengambil data
+        const url = "https://nominatim.openstreetmap.org/reverse?lat=-7.770637079932272&lon=110.39319148685021&format=json";
 
-    // Fungsi untuk mengambil data dari API dan menggabungkannya
-    function getData() {
-      const url = 'http://ip-api.com/json/';
-      fetch(url)
-        .then(response => response.json())
-        .then(apiData => {
-          // Data yang akan ditampilkan
-          const data = {
-            ip: apiData.query || 'Data belum diambil',
-            city: apiData.city || 'Data belum diambil',
-            country: apiData.country || 'Data belum diambil',
-            isp: apiData.isp || 'Data belum diambil',
-            lat: apiData.lat || null,
-            lon: apiData.lon || null,
-            browser: getBrowserName(),
-            platform: navigator.platform || null,
-          };
+        // Buat header untuk request
+        const headers = {
+            "User -Agent": "MyUser  Agent/1.0"
+        };
 
-          // Tampilkan data dalam format JSON
-          document.getElementById('data-output').textContent = JSON.stringify(data, null, 2);
-        })
-        .catch(error => console.error('Error:', error));
-    }
+        // Buat objek untuk fetch data
+        const options = {
+            method: "GET",
+            headers: headers
+        };
 
-    // Event listener untuk tombol
-    document.getElementById('getData').addEventListener('click', getData);
-  </script>
+        // Fungsi untuk mengambil data
+        async function fetchData() {
+            try {
+                // Fetch data dari URL
+                const response = await fetch(url, options);
+                
+                // Cek apakah response berhasil
+                if (response.ok) {
+                    // Parse response sebagai JSON
+                    const data = await response.json();
+                    
+                    // Tampilkan data dalam format JSON di konsol
+                    console.log(data);
+                } else {
+                    // Jika response gagal, tampilkan error
+                    throw new Error(`Gagal mengambil data. Error: ${response.status} ${response.statusText}`);
+                }
+            } catch (error) {
+                // Jika terjadi error, tampilkan error
+                console.error(error.message);
+            }
+        }
+
+        // Panggil fungsi untuk mengambil data
+        fetchData();
+    </script>
 </body>
 </html>

@@ -60,18 +60,11 @@
 <body>
     <canvas id="c"></canvas>
 
-    <div class="hud">
-        <div class="pill">Node kamu selalu center</div>
-        <div class="pill">Jika window lain overlap → node-nya muncul di window ini</div>
-        <div class="pill">Jika tidak overlap → beam ke arah window tsb (mentok tepi)</div>
-    </div>
-
     <script>
         (() => {
             const canvas = document.getElementById('c');
             const ctx = canvas.getContext('2d');
 
-            // ====== HiDPI ======
             function resize() {
                 const dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
                 canvas.width = Math.floor(innerWidth * dpr);
@@ -85,15 +78,12 @@
             });
             resize();
 
-            // ====== ID per window/tab ======
             const tabId = (crypto?.randomUUID) ? crypto.randomUUID() :
                 ('tab_' + Math.random().toString(16).slice(2) + Date.now());
 
-            // ====== BroadcastChannel ======
             const CH_NAME = "center_node_link_v3_overlap";
             const bc = ("BroadcastChannel" in window) ? new BroadcastChannel(CH_NAME) : null;
 
-            // fallback localStorage
             const LS_KEY = "center_node_link_v3_overlap_msg";
 
             function post(msg) {
@@ -118,13 +108,11 @@
                 };
             }
 
-            // ====== Utils ======
             const now = () => Date.now();
             const rand = (a, b) => a + Math.random() * (b - a);
             const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
 
-            // ====== Presence + bounds ======
-            const peers = new Map(); // id -> { last, sx, sy, ow, oh }
+            const peers = new Map();
             const TTL = 3200;
 
             function myBounds() {
@@ -136,7 +124,6 @@
                 };
             }
 
-            // Estimasi origin konten (top-left viewport) dalam koordinat layar
             function myContentOriginScreen() {
                 const b = myBounds();
                 const chromeX = (b.ow - innerWidth) / 2;
@@ -226,16 +213,16 @@
                 }
             }
 
-            // ====== Visual settings ======
+
             const NODE_R = 34;
             const PEER_R = 28;
 
-            // Accent colors
+
             const C_CYAN = "0, 210, 255";
             const C_VIOLET = "167, 139, 250";
             const C_ORANGE = "249, 115, 22";
 
-            // ====== Background subtle fog ======
+
             function drawFog(t) {
                 ctx.save();
                 ctx.globalCompositeOperation = "lighter";
@@ -274,7 +261,6 @@
                 ctx.restore();
             }
 
-            // ====== Node drawing ======
             function drawNode(cx, cy, r, isMe) {
                 const g1 = ctx.createRadialGradient(cx, cy, r * 0.15, cx, cy, r * 3.2);
                 g1.addColorStop(0, isMe ? "rgba(255,255,255,0.22)" : `rgba(${C_VIOLET},0.12)`);
@@ -305,9 +291,6 @@
                 ctx.restore();
             }
 
-            // ============================================================
-            // ====== NEW LIGHTNING: BIG + ADAPTIVE + TAPER + NO END DOT ===
-            // ============================================================
             function lightningPath(ax, ay, bx, by, t, jag = 1.0) {
                 const dx = bx - ax,
                     dy = by - ay;
@@ -335,48 +318,47 @@
                 }
             }
 
-            // closer = thicker; far = thinner
             function widthByDistance(dist) {
                 const near = 220;
                 const far = 950;
                 const t = Math.max(0, Math.min(1, (dist - near) / (far - near)));
-                return (1 - t) * 11.2 + t * 3.9; // big -> small
+                return (1 - t) * 11.2 + t * 3.9;
             }
 
             function strokeGlowTapered(ax, ay, bx, by, baseWidth) {
                 const grad = ctx.createLinearGradient(ax, ay, bx, by);
-                // near node bright
+
                 grad.addColorStop(0.00, "rgba(235,255,255,0.98)");
                 grad.addColorStop(0.08, "rgba(170,245,255,0.92)");
                 grad.addColorStop(0.20, `rgba(${C_CYAN},0.80)`);
-                // far: more transparent
+
                 grad.addColorStop(0.70, `rgba(${C_CYAN},0.38)`);
                 grad.addColorStop(1.00, `rgba(${C_CYAN},0.18)`);
 
                 ctx.lineCap = "round";
                 ctx.lineJoin = "round";
 
-                // outer bloom
+
                 ctx.strokeStyle = `rgba(${C_CYAN},0.10)`;
                 ctx.lineWidth = baseWidth * 3.2;
                 ctx.stroke();
 
-                // secondary bloom
+
                 ctx.strokeStyle = `rgba(${C_VIOLET},0.07)`;
                 ctx.lineWidth = baseWidth * 2.25;
                 ctx.stroke();
 
-                // main glow
+
                 ctx.strokeStyle = `rgba(${C_CYAN},0.34)`;
                 ctx.lineWidth = baseWidth * 1.35;
                 ctx.stroke();
 
-                // colored inner (gives taper vibe)
+
                 ctx.strokeStyle = grad;
                 ctx.lineWidth = baseWidth * 0.88;
                 ctx.stroke();
 
-                // sharp core
+
                 ctx.strokeStyle = "rgba(235,255,255,0.98)";
                 ctx.lineWidth = Math.max(1.2, baseWidth * 0.28);
                 ctx.stroke();
@@ -389,14 +371,14 @@
 
                 const baseWidth = widthByDistance(dist);
 
-                // main
+
                 lightningPath(ax, ay, bx, by, t, 1.0);
                 strokeGlowTapered(ax, ay, bx, by, baseWidth);
 
-                // branches only near node (biar ujung edge bersih)
+
                 const branchCount = dist < 700 ? 2 : 1;
                 for (let k = 0; k < branchCount; k++) {
-                    const p = 0.16 + Math.random() * 0.32; // dekat node
+                    const p = 0.16 + Math.random() * 0.32;
                     const sx = ax + dx * p;
                     const sy = ay + dy * p;
 
@@ -424,7 +406,7 @@
                     ctx.restore();
                 }
 
-                // sparks only near node
+
                 if (Math.random() < 0.18) {
                     const p = 0.05 + Math.random() * 0.25;
                     const sx = ax + dx * p,
@@ -436,12 +418,12 @@
                 }
             }
 
-            // Ray to edge within this canvas (MENTOK TEPI)
+
             function pointOnEdgeFromAngle(cx, cy, angle) {
                 const ux = Math.cos(angle),
                     uy = Math.sin(angle);
 
-                const pad = 0; // <= 0 biar benar-benar mentok tepi
+                const pad = 0;
                 const left = pad,
                     right = innerWidth - pad;
                 const top = pad,
@@ -459,7 +441,7 @@
                 };
             }
 
-            // ====== Particles around my node ======
+
             const particles = Array.from({
                 length: 34
             }, () => ({
@@ -487,7 +469,6 @@
                 ctx.restore();
             }
 
-            // ====== Decide: show peer node inside OR beam to edge ======
             function peerCenterToLocal(peerBounds) {
                 const pc = centerScreenOf(peerBounds);
                 const origin = myContentOriginScreen();
@@ -506,7 +487,7 @@
                 );
             }
 
-            // glow halus hanya untuk node peer yang benar-benar terlihat (overlap)
+
             function drawPeerLocalGlow(x, y) {
                 const g = ctx.createRadialGradient(x, y, 1, x, y, 28);
                 g.addColorStop(0, "rgba(235,255,255,0.80)");
@@ -519,7 +500,7 @@
                 ctx.fill();
             }
 
-            // ====== Render loop ======
+
             let t = 0;
 
             function tick() {
@@ -527,7 +508,7 @@
 
                 ctx.clearRect(0, 0, innerWidth, innerHeight);
 
-                // vignette
+
                 const vg = ctx.createRadialGradient(innerWidth / 2, innerHeight / 2, 0, innerWidth / 2, innerHeight / 2, Math.max(innerWidth, innerHeight));
                 vg.addColorStop(0, "rgba(0,0,0,0)");
                 vg.addColorStop(1, "rgba(0,0,0,0.40)");
@@ -544,41 +525,40 @@
                     const peerLocal = peerCenterToLocal(p);
 
                     if (isInsideViewport(peerLocal, 0)) {
-                        // tampilkan node peer di posisi itu
+
                         const px = clamp(peerLocal.x, 14, innerWidth - 14);
                         const py = clamp(peerLocal.y, 14, innerHeight - 14);
 
-                        // lightning langsung ke node peer (distance adaptif => makin dekat makin tebal)
+
                         drawLightning(meLocal.x, meLocal.y, px, py, t + 0.7);
 
-                        // peer node muncul
+
                         drawNode(px, py, PEER_R, false);
 
-                        // glow halus dekat peer (boleh, karena ini bukan "ujung pinggir")
                         ctx.save();
                         ctx.globalAlpha = 0.85;
                         drawPeerLocalGlow(px, py);
                         ctx.restore();
 
                     } else {
-                        // beam ke arah peer -> mentok tepi canvas
+
                         const pc = centerScreenOf(p);
                         const angle = Math.atan2(pc.y - meScreen.y, pc.x - meScreen.x);
                         const edge = pointOnEdgeFromAngle(meLocal.x, meLocal.y, angle);
 
-                        // TANPA bulatan di ujung edge (biar terasa nyambung)
+
                         drawLightning(meLocal.x, meLocal.y, edge.x, edge.y, t);
                     }
                 }
 
-                // node kita (selalu center)
+
                 drawParticles(meLocal.x, meLocal.y, t);
                 drawNode(meLocal.x, meLocal.y, NODE_R, true);
 
                 requestAnimationFrame(tick);
             }
 
-            // ====== Start presence ======
+
             hello();
             const hb = setInterval(ping, 450);
             addEventListener('beforeunload', () => {
